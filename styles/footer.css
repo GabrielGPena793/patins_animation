@@ -97,4 +97,30 @@ footer {
       }
     }
   }
+
+  @media (width < 80em) {
+    flex-direction: column;
+    align-items: start;
+    padding: 0 1.5rem 0;
+    gap: 3rem;
+
+    & .logo {
+      padding-block: 3rem 0;
+    }
+
+    & nav {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    & .social-links {
+      gap: 1rem;
+      padding-block: 0 1.5rem;
+
+      & a {
+        width: 2rem;
+        height: 2rem;
+      }
+    }
+  }
 }

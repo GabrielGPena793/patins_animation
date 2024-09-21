@@ -101,6 +101,28 @@ section.gallery {
       border-radius: 50%;
     }
   }
+
+  @media (width < 80em) {
+    padding: 1.5rem 1.5rem 0;
+
+    & .content {
+      grid-template-areas:
+        "A"
+        "B"
+        "C"
+        "D";
+
+      gap: 1.5rem;
+    }
+
+    & figure {
+      animation-range: 50px 250px;
+
+      &[data-delay] {
+        animation-range: 75px 300px;
+      }
+    }
+  }
 }
 
 @keyframes image-appear {

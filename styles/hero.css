@@ -14,8 +14,8 @@ section.hero {
 
   & h1 div {
     display: inline-block;
-    overflow: hidden;
     height: 5rem;
+    overflow: hidden;
     width: min-content;
 
     vertical-align: bottom;
@@ -132,6 +132,37 @@ section.hero {
       animation: slideIn 2.2s 500ms ease forwards;
     }
   }
+
+  @media (width < 80em) {
+    padding: 1rem 1.5rem 1rem;
+
+    flex-direction: column-reverse;
+
+    & h1 {
+      font-size: 2rem;
+    }
+
+    & h1 div {
+      height: 2.5rem;
+    }
+
+    & h1 span {
+      animation: slideUp-mobile 5s 2s ease infinite;
+    }
+
+    & .buttons {
+      flex-direction: column-reverse;
+    }
+
+    & > div:nth-child(2) {
+      height: 20rem;
+      margin-bottom: 2rem;
+
+      & img {
+        max-width: 19.5rem;
+      }
+    }
+  }
 }
 
 @keyframes slideIn {
@@ -221,5 +252,79 @@ section.hero {
 
   100% {
     transform: translateY(-15rem);
+  }
+}
+
+@keyframes slideUp-mobile {
+  0%,
+  22% {
+    transform: translateY(0);
+  }
+
+  /* divertida in */
+  23% {
+    transform: translateY(calc(-2.5rem - 7.5px));
+  }
+
+  25% {
+    transform: translateY(calc(-2.5rem + 5px));
+  }
+
+  27% {
+    transform: translateY(calc(-2.5rem - 2.5px));
+  }
+
+  29% {
+    transform: translateY(calc(-2.5rem + 2.5px));
+  }
+
+  33%,
+  55% {
+    transform: translateY(-2.5rem);
+  }
+
+  /* saudável in */
+
+  56% {
+    transform: translateY(calc(-5rem - 7.5px));
+  }
+
+  58% {
+    transform: translateY(calc(-2.5rem + 5px));
+  }
+
+  60% {
+    transform: translateY(calc(-5rem - 2.5px));
+  }
+
+  62% {
+    transform: translateY(calc(-5rem + 2.5px));
+  }
+
+  66%,
+  88% {
+    transform: translateY(-5rem);
+  }
+
+  /* radical in */
+
+  89% {
+    transform: translateY(calc(-7.5rem - 7.5px));
+  }
+
+  91% {
+    transform: translateY(calc(-7.5rem + 5px));
+  }
+
+  93% {
+    transform: translateY(calc(-7.5rem - 2.5px));
+  }
+
+  95% {
+    transform: translateY(calc(-7.5rem - 2.5px));
+  }
+
+  100% {
+    transform: translateY(-7.5rem);
   }
 }
